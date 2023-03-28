@@ -1,0 +1,24 @@
+.main .activityList {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.main .activityList li {
+    display: flex;
+    justify-content: center;
+}
+
+.totalSupport {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    background-color: beige;
+}
+
+.supportBtn {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}

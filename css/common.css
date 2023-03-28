@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+.basicSet {
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: beige;
+}
+
+.header .topMenu li {
+    display: inline-block;
+    list-style: none;
+}
+
+.footer {
+    height: 100px;
+    background-color: antiquewhite;
+}
