@@ -48,6 +48,7 @@
     background-color: #fafafa;
     border: 1px solid rgba(0, 0, 0, .11);
     border-radius: 0 15px 15px 0;
+    border-left: 0;
     box-shadow: rgba(0, 0, 0, 0.08) 8px 7px 8px -4px;
 }
 
@@ -123,6 +124,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
+}
+
+.secondTxt strong {
+    text-decoration: underline;
+    text-underline-offset: 5px;
 }
 
 .secondMain .activityList {

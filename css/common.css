@@ -37,6 +37,53 @@ li {
 }
 
 .footer {
-    height: 100px;
-    background-color: antiquewhite;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    border-top: 1px solid rgba(0, 0, 0, .11);
+    padding: 30px; 
+    margin-top: 100px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 6px 5px 6px;
+}
+
+#menuBtn {
+    display: none;
+}
+
+@media screen and (max-width: 786px) {
+    .header {
+        position: relative;
+    }
+
+    .header .topMenu {
+        display: none;
+    }
+
+    .header .isVisible {
+        z-index: 10;
+        display: block;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 100%;
+    }
+
+    .header .isVisible li {
+        display: block;
+        position: relative;
+        width: 100%;
+        background-color: whitesmoke;
+        text-align: center;
+        padding: 10px;
+        border: 1px solid rgba(0, 0, 0, .11);
+    }
+    .header .isVisible li a {
+        display: block;
+        text-decoration: none;
+    }
+
+    #menuBtn {
+        display: block;
+    }
 }
