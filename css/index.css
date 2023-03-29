@@ -2,23 +2,133 @@
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
 .main .activityList li {
     display: flex;
     justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.main .activityList .imgWrapper {
+    width: 45%;
+    min-width: 178px;
+    height: 100%;
+    max-height: 250px;
+    border: 1px solid rgba(0, 0, 0, .11);
+    border-radius: 15px 0 0 15px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-right: 0;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.08) 17px 7px 8px -4px;
+}
+
+.imgWrapper img {
+    width: 100%;
+    height: 100%;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+}
+
+.imgWrapper:hover img {
+    transform: scale(1.1);
+}
+
+.activityList .txtWrapper {
+    z-index: 10;
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    background-color: #fafafa;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, .11);
+    border-radius: 0 15px 15px 0;
+    box-shadow: rgba(0, 0, 0, 0.08) 8px 7px 8px -4px;
+}
+
+/* .activityList .txtWrapper::after {
+    z-index: -1;
+    display: block;
+    content: "";
+    box-shadow: rgba(0, 0, 0, 0.08) 12px 7px 20px 0px;
+    width: 100%;
+    height: 100%;
+} */
+
+.activityList .txtWrapper .percentBar {
+    display: inline-block;
+    width: 100%;
+    height: 6px;
+    background-color: #e8e8e8;
+    border-radius: 6px;
+}
+
+.percentBar .insideBar {
+    display: block;
+    height: 6px;
+    background-color: #003166;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.txtWrapper button {
+    display: block;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 120px;
+    padding: 8px 12px;
+    border-radius: 6px;
 }
 
 .totalSupport {
+    width: 100%;
+    background-color: #003166;
+}
+
+.innerTotal {
     display: flex;
     justify-content: space-between;
     width: 80%;
     margin: 0 auto;
-    background-color: beige;
+    color: white;
 }
+
 
 .supportBtn {
     position: fixed;
     bottom: 0;
     right: 0;
+}
+
+@media screen and (max-width: 786px) {
+    .main .activityList {
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+    }
+
+
+    .main .activityList .imgWrapper {
+        min-width: 120px;
+        max-width: 250px;
+    }
+
+    .main .activityList .txtWrapper {
+        width: 100%;
+        background-color: #fafafa;
+        max-width: 250px;
+    }
+
+    .main .activityList li {
+        max-height: 200px;
+    }
+
+    .innerTotal {
+        flex-direction: column;
+    }
+
 }
