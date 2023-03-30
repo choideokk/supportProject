@@ -34,6 +34,15 @@ li {
 .header .topMenu li {
     display: inline-block;
     list-style: none;
+    cursor: pointer;
+}
+
+.header .topMenu li a{
+    text-decoration: none;
+}
+
+.header .topMenu li a:visited{
+    color: #003166;
 }
 
 .footer {
@@ -47,8 +56,34 @@ li {
     box-shadow: rgba(0, 0, 0, 0.08) 0px 6px 5px 6px;
 }
 
-#menuBtn {
+.menuBtn {
     display: none;
+}
+
+.supportBtn {
+    z-index: 10;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    width: 4rem;
+    height: 4rem;
+    padding-top: 10px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    color:#e8e8e8;
+    font-size: 38px;
+    line-height: 3rem;
+    background-color: #003166;
+}
+
+.supportBtn:visited {
+    color:#e8e8e8;
+}
+
+.supportBtn span {
+    display: block;
+    font-size: 34px;
 }
 
 @media screen and (max-width: 786px) {
@@ -61,12 +96,12 @@ li {
     }
 
     .header .isVisible {
-        z-index: 10;
         display: block;
         position: absolute;
-        width: 100%;
-        left: 0;
         top: 100%;
+        left: 0;
+        z-index: 10;
+        width: 100%;
     }
 
     .header .isVisible li {
@@ -76,14 +111,68 @@ li {
         background-color: whitesmoke;
         text-align: center;
         padding: 10px;
-        border: 1px solid rgba(0, 0, 0, .11);
+        font-size: 20px;
+        font-weight: 700;
     }
+
+    .header .isVisible li:hover a {
+        color: #663500;
+    }
+
     .header .isVisible li a {
         display: block;
         text-decoration: none;
     }
 
-    #menuBtn {
+    .menuBtn {
+        position: relative;
         display: block;
+        width: 40px;
+        height: 40px;
+        background: none;
+        border: 0;
+        overflow: hidden;
     }
+
+    .menuBtn span:first-child, .menuBtn span:nth-child(2), .menuBtn span:last-child {
+        display: block;
+        position: absolute;
+        left: 4px;
+        width: 100%;
+        height: 2px;
+        border-radius: 4px;
+        margin: 0 auto;
+        background-color: #003166;
+    }
+
+    .menuBtn span:first-child {
+        top: 13px;
+    }
+
+    .menuBtn span:nth-child(2) {
+        top: 23px;
+    }
+
+    .menuBtn span:last-child {
+        top: 33px;
+    }
+
+    .isCross span {
+        transition-property: all;
+        transition-duration: 0.3s;
+        transition-timing-function: ease;
+    }
+
+   .isCross span:first-child {
+        transform-origin: top left;
+        transform: rotate(30deg);
+    }
+    .isCross span:nth-child(2) {
+        display:none;
+    }
+    .isCross span:last-child {
+        transform-origin: 0 0;
+        transform: rotate(-30deg);
+    }
+    
 }

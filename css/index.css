@@ -1,3 +1,102 @@
+@keyframes flicker {
+    0% {
+        color: black;
+    }
+    100% {
+        color: #003BFF;
+    }
+}
+
+.isHidden {
+    display: none;
+}
+
+.vidPlayer {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 600px;
+    overflow: hidden;
+}
+
+.vidPlayer video {
+    display: inline-block;
+    width: 100%;
+    pointer-events: none;
+    object-fit: cover;
+}
+
+.vidPlayer .vidBtn {
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    height: 100%;
+    border: 0;
+    padding: 10px;
+    background: none;
+}
+
+.vidPlayer .nextBtn {
+    right: 0px;
+}
+
+.vidPlayer .prevBtn {
+    left: 0px;
+}
+
+.nextBtn::before, .nextBtn::after, .prevBtn::after, .prevBtn::before {
+    display: block;
+    width: 60px;
+    height: 2px;
+    content: "";
+    background-color: #fafafa;
+}
+
+.nextBtn::before {
+    transform: rotate(45deg);
+}
+
+.nextBtn::after {
+    position: relative;
+    top: 40px;
+    transform: rotate(315deg);
+}
+
+.prevBtn::before {
+    transform: rotate(-45deg);
+}
+
+.prevBtn::after {
+    position:relative;
+    top: 18px;
+    left: 10px;
+    transform-origin: top left;
+    transform: rotate(45deg);
+}
+
+.vidPlayer .vidTxt {
+    position: absolute;
+    top: 45%;
+    left: 20%;
+    width: 50%;
+    max-width: 700px;
+    background-color: aquamarine;
+    z-index: 5;
+    text-align: center;
+    font-size: 32px;
+    color: white;
+    text-shadow: 2px 2px 1px black;
+}
+
+.vidPlayer .vidCarousel {
+    display: flex;
+    transition-property: all;
+    transition-duration: 1.5s;
+    transition-timing-function: ease-out;
+}
+
+
 .main .activityList {
     display: grid;
     grid-template-rows: 1fr 1fr;
@@ -93,11 +192,92 @@
     transform: scale(1.1);
 }
 
+.eventBlock h2 {
+    margin-bottom: 20px;
+}
+
+.eventBlock ul {
+    display: flex;
+}
+
+.eventBlock ul li {
+    width: 50%;
+    height: 120px;
+    cursor: pointer;
+}
+
+.eventBlock .waveEvent {
+    padding: 10px;
+    background-position: bottom;
+    background-image: url("https://www.icegif.com/wp-content/uploads/2023/03/icegif-39.gif");
+}
+
+.waveEvent .insideBg {
+    display: block;
+    background-color: #fafafa;
+    text-decoration: none;
+}
+
+.waveEvent .bgGif {
+    display: block;
+    user-select: none;
+    text-align: center;
+    font-size: 52px;
+    line-height: 100px;
+    font-weight: bolder;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-position: bottom;
+    background-image: url("https://www.icegif.com/wp-content/uploads/2023/03/icegif-39.gif");
+}
+
+.backEvent {
+    background-color: #ffc300;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.backEvent a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.backEvent .mention span {
+    display: inline-block;
+    animation-name: flicker;
+    animation-iteration-count: infinite;
+    animation-duration: .4s;
+    animation-direction: alternate;
+}
+
+.backEvent .pngWrapper {
+    width: 8rem;
+    height: 8rem;
+}
+
+.backEvent .pngWrapper::before {
+    position: absolute;
+    content: "✨";
+    width: 8px;
+    height: 8px;
+    font-size: 26px;
+}
+
+.backEvent  .pngWrapper img {
+    width: 100%;
+    height: 100%;
+}
+
 .main .txtWrapper .totalMoney {
     margin-top: 5px;
     text-align: right;
     text-decoration: underline;
     text-underline-offset: 5px;
+    text-decoration-color:#003166;
 }
 
 .totalMoney strong {
@@ -128,6 +308,7 @@
 }
 
 .secondTxt strong {
+    color: #003166;
     text-decoration: underline;
     text-underline-offset: 5px;
 }
@@ -186,32 +367,34 @@
     background: linear-gradient(to top, #ffc300 50%, transparent 50%);
 }
 
-.supportBtn {
-    position: fixed;
-    right: 10px;
-    bottom: 10px;
-    width: 4rem;
-    height: 4rem;
-    padding-top: 10px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 50%;
-    color:#e8e8e8;
-    font-size: 38px;
-    line-height: 3rem;
-    background-color: #003166;
-}
-
-.supportBtn:visited {
-    color:#e8e8e8;
-}
-
-.supportBtn span {
-    display: block;
-    font-size: 34px;
-}
-
 @media screen and (max-width: 786px) {
+
+    .nextBtn::before, .nextBtn::after, .prevBtn::after, .prevBtn::before {
+        width: 30px;
+    }
+    
+    .nextBtn::before {
+        transform: rotate(45deg);
+    }
+    
+    .nextBtn::after {
+        position: relative;
+        top: 18px;
+        transform: rotate(315deg);
+    }
+    
+    .prevBtn::before {
+        transform: rotate(-45deg);
+    }
+    
+    .prevBtn::after {
+        position:relative;
+        top: 8px;
+        left: 6px;
+        transform-origin: top left;
+        transform: rotate(45deg);
+    }
+
     .main .activityList {
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr;
@@ -257,11 +440,25 @@
         padding-top: 4em;
     }
 
+    .eventBlock ul  {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .eventBlock ul li  {
+       width: 100%;
+       font-size: 24px;
+    }
+
+
+    .waveEvent .bgGif {
+        font-size: 46px;
+    }
+
 }
 
 @media screen and (max-width: 375px) {
     .main .totalMoney {
         display: none;
     }
-
 }
