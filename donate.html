@@ -7,13 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/common.css" type="text/css">
     <link rel="stylesheet" href="./css/donate.css" type="text/css">
+    <link rel="stylesheet" href="./css/donate2.css" type="text/css">
     <title>Document</title>
 </head>
 
 <body>
-    <div class="header basicSet">
-        <h1>로고</h1>
-        <div class="topMenu">
+    <header class="header basicSet">
+        <h1>🎨</h1>
+        <nav class="topMenu">
             <ul>
                 <li>
                     <a href="index.html">Home</a>
@@ -25,72 +26,244 @@
                     <a href="donate.html">후원하기</a>
                 </li>
             </ul>
-        </div>
+        </nav>
+        <button class="menuBtn" type="button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+    <div class="mainTitle">
+        <h1>후원하기</h1>
     </div>
-    <form class="donateForm basicSet">
-        <div>
-            <label>후원 금액
-                <div>
-                    <button type="button">20000원</button>
-                    <button type="button">50000원</button>
-                    <button type="button">70000원</button>
-                    <button type="button">직접입력</button>
+    <form class="donateForm">
+        <div class="formInner">
+            <div class="progressBar">
+                <span class="circle circle1"></span>
+                <span class="line"></span>
+                <span class="circle circle2"></span>
+            </div>
+            <h3 class="firstH3">1. 후원 정보</h3>
+            <div class="leftSide basicSet">
+                <label>후원 방법</label>
+                <div class="sendWrapper inpType1">
+                    <input type="radio" id="send" class="regularSend" name="sendType" checked />
+                    <label for="send">정기후원</label>
+                    <input type="radio" id="send2" class="onceSend " name="sendType" />
+                    <label for="send2">일시후원</label>
                 </div>
-                <input type="number" placeholder="직접 입력" min="100" disabled />
-            </label>
-            <br />
-            <label>후원 목록
-                <select>
-                    <option>활동이름1</option>
-                    <option>활동이름2</option>
-                    <option>활동이름3</option>
-                    <option>활동이름4</option>
-                </select>
-            </label>
-            <br />
-            <label>은행
-                <select>
-                    <option>은행이름1</option>
-                    <option>은행이름2</option>
-                    <option>은행이름3</option>
-                    <option>은행이름4</option>
-                </select>
-            </label>
-            <br />
-            <label>계좌번호
-                <input type="text" placeholder="-없이 입력해주세요" />
-            </label>
-            <br />
-            <label>예금주명
-                <input type="text" />
-            </label>
-            <br />
-            <label>생년월일 6자리
-                <input type="text" placeholder="주민번호 앞 6자리를 입력해주세요" />
-            </label>
-        </div>
-        <br />
-        </div>
-        <div>
-            <p>출금 관련 주의사항 적는 곳입니다</p>
-            <span>----------------구분선-----------------</span>
-            <br />
-            <label>
-                <input type="checkbox" />
-                [필수] 이용약관 동의에 대한 설명...</label>
-            <br />
-            <label>
-                <input type="checkbox" />
-                [필수] 개인정보처리방침 동의에 대한 설명...</label>
-            <div>
-                <button type="button">후원</button>
-                <button type="button">취소</button>
+                <label>성별</label>
+                <div class="gender inpType1">
+                    <input type="radio" name="gender" id="male" /><label for="male">남</label>
+                    <input type="radio" checked name="gender" id="female" /><label for="female">여</label>
+                </div>
+                <label>후원 목록
+                    <div class="listWrapper">
+                        <select class="dnList">
+                            <option>후원 활동 선택</option>
+                            <option>[#wave] 챌린저스와 함께하는 플로깅 챌린지</option>
+                            <option>지속가능한 환경을 위한 그린머니 모금</option>
+                            <option>한 마을 한 우물 캠페인</option>
+                            <option>시골 유기견 보호소 사료 후원</option>
+                        </select>
+                    </div>
+                    <span class="warningTxt" style="font-size: 16px; color: red;">필수 선택입니다</span>
+                </label>
+                <label>후원 금액(원)<span style="font-size: 14px;">※ 원하시는 금액을 선택해 주세요</span></label>
+                <div class="moneyWrapper">
+                    <label for="five"><input type="radio" name="money" value="50000" id="five" />50,000원</label>
+                    <label for="seven">
+                        <input type="radio" name="money" value="70000" id="seven" />70,000원
+                    </label>
+                    <label for="ten">
+                        <input type="radio" name="money" value="100000" id="ten" />100,000원
+                    </label>
+                    <input id="moneyInp" autocomplete="false" autocapitalize="false" type="text" name="money"
+                        maxlength="7" placeholder="직접 입력" />
+                </div>
+                <label class="totalCost">
+                    <div>
+                        총 후원금액
+                        <span>
+                            <input type="text" placeholder="0" value="0" readonly />원
+                        </span>
+                    </div>
+                </label>
+                <button type="button" class="goNextBtn">다음</button>
+            </div>
+            <div class="isHidden firstInfoWrapper">
+                <p>정기후원 / 50000 / 한 마을 한 우물 캠페인</p>
+                <button type="button" class="goBackBtn">변경</button>
+            </div>
+            <h3 class="secondH3 isHidden">2. 결제자 정보</h3>
+            <div class="rightSide basicSet isHidden">
+                <label>은행
+                    <div class="listWrapper">
+                        <select>
+                            <option>초롱은행</option>
+                            <option>카카오뱅크</option>
+                            <option>신한은행</option>
+                            <option>농협은행</option>
+                            <option>IBK기업은행</option>
+                        </select>
+                    </div>
+                </label>
+                <label for="accountInp">계좌번호</label>
+                <input type="text" id="accountInp" placeholder="-없이 입력해주세요" autocomplete="false" />
+                <br />
+                <label for="accountNameInp">예금주명</label>
+                <input id="accountNameInp" type="text" autocomplete="false" />
+                <br />
+                <label for="birthInp">생년월일 6자리</label>
+                <input type="text" autocomplete="false" id="birthInp" placeholder="주민번호 앞 6자리를 입력해주세요" maxlength="6" />
+                <br />
+                <p class="withdraw basicSet">
+                    [출금정책 안내]
+                    <br />
+                    * 정기출금일은 매월 5, 14, 23, 27일입니다.
+                    <strong>
+                        * 가입 첫달은 지정일 외 다른 정기출금일에 출금될 수 있습니다.
+                    </strong>
+                    　예) 지정일은 5일이나 첫달은 23일에 출금
+                    <strong>
+                        * 지정일에 미출금된 경우 다른 정기출금일이나 다음달에 합산 출금될 수 있습니다.
+                    </strong>
+                    　예) 5월분 1만원의 미출금으로 6월에 5,6월분 합계인 2만원이 출금
+                </p>
+                <label>
+                    [필수] 개인정보 수집 및 이용동의
+                    <input type="checkbox" />
+                    <p class="detailExplanation">
+                        [개인정보 처리방침]
+
+                        이용기관(회원정보 및 결제정보를 취득하는 비영리기관 또는 업체, 이하 “이용기관” 이라 함)은 개인정보 보호법 제 30조에 따라 회원님의 개인정보를 보호하고, 이와 관련한
+                        고충을
+                        신속하고 원할하게 처리하기 위해 다음과 같이 개인정보 처리방침을 만들어 알려드립니다.
+
+
+                        제1조 (개인정보의 처리목적)
+                        ① 회원정보 및 관리
+                        회원 가입 의사 확인, 회원제 서비스 제공에 따른 본인 식별 인증, 회원 자격 유지 및 관리, 제한적 본인확인제 시행에 따른 본인 확인, 서비스 부정이용 방지, 만 14세
+                        미만
+                        아동의 개인정보 처리 시 법정대리인의 동의여부 확인, 각종 고지 통지를 목적으로 개인정보를 처리합니다.
+                        ② 고충처리
+                        민원인의 신원확인, 민원사항 확인, 사실조사를 위한 연락 및 통지, 처리결과 통보 등의 목적으로 개인정보를 처리합니다.
+
+                        제2조 (개인정보의 처리 및 보유기간)
+                        ① 법령 또는 정보주체로부터 동의받은 개인정보 보유, 이용기간 내에서 개인정보를 처리 보유합니다.
+                        ② 각각의 개인정보 처리 및 보유기간은 다음과 같습니다.
+                        1) 회원정보 및 관리 :
+                        - 보존 항목 : 회원명, 연락처, 기타 정보 및 결제정보 등
+                        - 보존 근거 : 회원관리 및 결제처리내역 등의 혼선방지 및 활용
+                        - 보존 기간 : 회원의 탈퇴 및 정보삭제 요청 시까지
+                        2) 관계법령에 의한 정보보유 사유
+                        - 보존 항목 : 회원명, 로그인정보, 연락처, 결제정보(결제기관에서 요청하는 최소한의 정보), 결제기록 (탈퇴 시 가지고 있는 것들)
+                        - 보존 근거 : 전자상거래 등에서의 소비자보호에 관한 법률
+                        - 보존 기간 : 5년
+                        3) 계약 또는 청약철회 등에 관한 기록 : 5년(전자상거래 등에서의 소비자보호에 관한 법률)
+                        4) 대금 결제 및 재화 등의 공급에 관한 기록 : 5년(전자상거래 등에서의 소비자보호에 관한 법률)
+                        5) 소비자의 불만 또는 분쟁처리에 관한 기록 : 3년(전자상거래 등에서의 소비자보호에 관한 법률)
+                        6) 본인확인에 관한 기록 : 6개월(정보통신망 이용촉진 및 정보보호 등에 관한 법률)
+
+                        제3조(개인정보의 제3자 제공)
+                        ① 이용기관은 정보주체의 개인정보를 제1조(개인정보의 처리 목적)에서 명시한 범위 내에서만 처리하며, 정보주체의 동의, 법률의 특별한 규정 등 개인정보 보호법 제17조 및
+                        제18조에 해당하는 경우에만 개인정보를 제3자에게 제공합니다.
+                        ② 이용기관은 다음과 같이 개인정보를 제3자에게 제공하고 있습니다.
+                        회원서비스를 위해 전문업체에 위탁하는 경우
+                        - 개인정보를 제공받는 자 : (주)트라패스
+                        - 제공받는 자의 개인정보 이용목적 : 회원DB관리 및 결제정보및내역/납입내역/ 문자 및 이메일 발송
+                        - 제공하는 개인정보 항목 : 회원정보 및 결제정보
+                        - 제공받는 자의 보유 이용기간 : 이용기관의 요청 및 서비스 해지 시 까지
+
+                        제10조(권익침해 구제방법)
+                        정보주체는 아래의 기관에 대해 개인정보 침해에 대한 피해구제, 상담 등을 문의하실 수 있습니다.
+                        ▶ 개인정보보호 종합지원 포털 (행정안전부 운영)
+                        - 소관업무 : 개인정보 침해사실 신고, 상담 신청, 자료제공 (www.privacy.go.kr)
+                        - 전화 : 02-2100-3394
+                        ▶ 개인정보 침해신고센터 (한국인터넷진흥원 운영)
+                        - 소관업무 : 개인정보 침해사실 신고, 상담 신청 (http://privacy.kisa.or.kr)
+                        - 전화 : (국번없이) 118
+                        - 주소 : (138-950) 서울시 송파구 중대로 135 한국인터넷진흥원 개인정보침해신고센터
+                        ▶ 개인정보 분쟁조정위원회 (한국인터넷진흥원 운영)
+                        - 소관업무 : 개인정보 분쟁조정신청, 집단분쟁조정 (민사적 해결) (http://privacy.kisa.or.kr)
+                        - 전화 : (국번없이) 118
+                        - 주소 : (138-950) 서울시 송파구 중대로 135 한국인터넷진흥원 개인정보침해신고센터
+                        ▶ 경찰청 사이버테러대응센터
+                        - 소관업무 : 개인정보 침해 관련 형사사건 문의 및 신고 (www.netan.go.kr)
+                        - 전화 : (사이버범죄) 02-393-9112/ (경찰청 대표) 1566-0112
+
+                        [부칙]
+                        ① 이 개인정보 처리방침은 2014. 10. 21에 개정되었습니다.
+                    </p>
+                </label>
+                <label>
+                    [필수] CMS자동이체 업무처리 관련
+                    <input type="checkbox" />
+                    <p class="detailExplanation">
+                        1. 개인정보 및 고유식별정보 수집 및 이용동의
+                        ▶ 수집 및 이용목적 : CMS자동이체를 통한 요금 수납
+                        ▶ 수집항목
+                        ▶ 수집항목 : (개인정보)성명, 생년월일, 연락처, 결제사, 결제자명, 계좌번호,
+                        카드번호, 유효기간, 휴대/유선전화번호, (고유식별정보)주민등록번호
+                        (단, 휴대/유선전화결제에 한함)
+                        ▶ 보유 및 이용기간 : 수집/이용 동의일부터 자동이체 종료일(해지일)까지
+                        ▶ 신청자는 개인정보 및 고유식별정보 수집 및 이용을 거부할 수 있습니다
+                        단, 거부 시 자동이체 신청이 처리되지 않습니다
+
+                        2. 개인정보 제 3자 제공동의
+                        ▶ 개인정보를 제공받는 자 : 효성에프엠에스㈜, 금융기관, 통신사(SKT,KT,LGU+,CJ헬로비전),
+                        카드사(BC,국민,신한,현대 등), 결제대행사(KG이니시스,KCP,), 금융결제원, ㈜트라패스 등
+                        자세한 내용은 홈페이지 참조
+                        ▶ 개인정보를 제공받는 자의 개인정보 이용목적 : 자동이체서비스 제공 및 자동이체 동의사실 통지
+                        ▶ 제공하는 개인정보의 항목 :(개인정보)성명,생년월일,연락처,결제사명,결제자명,
+                        계좌번호,카드번호,유효기간,휴대/유선전화번호.
+                        (고유식별정보) 주민등록번호 (단, 휴대/유선전화결제에 한함)
+                        ▶ 개인정보를 제공받는 자의 개인정보 보유 및 이용기간: 동의일부터 자동이체 해지일까지
+                        단, 관계 법령에 의거 일정기간 동안 보관
+                        ▶ 신청자는 개인정보에 대해 수납업체가 자동이체 제공기관에 제공하는 것을 거부할 수 있다
+                        거부 시 자동이체 신청이 처리되지 않습니다.
+                    </p>
+                </label>
+                <div class="submitDiv">
+                    <button type="button">후원</button>
+                    <button type="button">취소</button>
+                </div>
             </div>
         </div>
     </form>
     <div class="footer">
-        <p>footer입니다</p>
+        <h1>로고</h1>
+        <div style="display: flex;">
+            <ul>
+                <li>
+                    주소 충청남도 천안시 동남구 대흥동 134
+                </li>
+                <li>
+                    사단법인 롱롱초인터내셔날 | 사업자 등록 번호 | 대표자 ㅇㅇㅇ
+                </li>
+                <li>
+                    사회복지법인 롱롱초 | 사업자 등록 번호 | 대표자 ㅁㅁㅁ
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    회원상담센터 1582-1111
+                </li>
+                <li>대표전화 041-888-3878</li>
+                <li>Copyright c RC all right reserved</li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>이용약관</li>
+                <li>개인정보처리방침</li>
+                <li>후원-제휴 문의</li>
+            </ul>
+        </div>
+
     </div>
+    <script src="./js/common.js"></script>
+    <script src="./js/donate.js"></script>
 </body>
 
 </html>

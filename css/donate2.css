@@ -1,0 +1,24 @@
+.donateForm .isMuted {
+    color: #9a9a9a;
+}
+
+.formInner .firstInfoWrapper {
+    justify-content: space-between;
+    margin: 10px 0;
+    margin-bottom: 20px;
+}
+
+
+.firstInfoWrapper p {
+    padding-left: 20px;
+    color: #003166;
+}
+
+.firstInfoWrapper button {
+    background: none;
+    text-decoration: underline;
+    border: 0;
+    font-size: 20px;
+    color:#9a9a9a;
+    text-decoration-color: #9a9a9a;
+}

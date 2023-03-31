@@ -12,6 +12,16 @@
     font-family: 'NanumSquareNeo-Variable';
 }
 
+body {
+    padding-top: 80px;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
 li {
     list-style: none;
 }
@@ -20,8 +30,18 @@ li {
     padding: 20px;
 }
 
+.isHidden {
+    display: none;
+}
+
 .header {
     display: flex;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 10;
+    width: 100%;
+    height: 80px;
     justify-content: space-between;
     align-items: center;
     background-color: whitesmoke;
@@ -37,7 +57,7 @@ li {
     cursor: pointer;
 }
 
-.header .topMenu li a{
+.header .topMenu li a {
     text-decoration: none;
 }
 
@@ -61,10 +81,10 @@ li {
 }
 
 .supportBtn {
-    z-index: 10;
     position: fixed;
     right: 10px;
     bottom: 10px;
+    z-index: 10;
     width: 4rem;
     height: 4rem;
     padding-top: 10px;
@@ -87,6 +107,10 @@ li {
 }
 
 @media screen and (max-width: 786px) {
+    body {
+        padding-top: 0;
+    } 
+
     .header {
         position: relative;
     }
@@ -125,8 +149,8 @@ li {
     }
 
     .menuBtn {
-        position: relative;
         display: block;
+        position: relative;
         width: 40px;
         height: 40px;
         background: none;
