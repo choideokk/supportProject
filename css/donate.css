@@ -1,6 +1,6 @@
 .mainTitle {
-    background-image: url("https://cdn.pixabay.com/photo/2016/05/22/19/19/background-1409037_960_720.png");
-    color:#28B171;
+    background-image: url("https://cdn.pixabay.com/photo/2016/06/02/02/31/background-1430103_960_720.png");
+    color:white;
     line-height: 200px;
     height: 200px;
     background-position: 100%;
@@ -31,10 +31,6 @@
     padding-left: 30px;
 }
 
-.donateForm {
-    padding: 10px;
-}
-
 .formInner {
     width: 100%;
     max-width: 800px;
@@ -42,6 +38,27 @@
 
 .progressBar span {
     position: relative;
+}
+
+.formInner .firstInfoWrapper {
+    justify-content: space-between;
+    margin: 10px 0;
+    margin-bottom: 20px;
+}
+
+
+.firstInfoWrapper p {
+    padding-left: 20px;
+    color: #28B171;
+}
+
+.firstInfoWrapper button {
+    background: none;
+    text-decoration: underline;
+    border: 0;
+    font-size: 20px;
+    color:#9a9a9a;
+    text-decoration-color: #9a9a9a;
 }
 
 .progressBar {
@@ -183,7 +200,7 @@
     outline: none;
 }
 
-.donateForm label{
+.donateForm .leftSide label{
     display: block;
     font-size: 1.3rem;
     margin-bottom: 15px;
@@ -305,18 +322,6 @@
     color:white;
 }
 
-
-.rightSide .withdraw {
-    margin: 15px 0;
-    background-color: #F0F0F0;
-    line-height: 26px;
-}
-
-.withdraw strong {
-    display: block;
-    color:#28B171;
-}
-
 .moneyWrapper {
     display: flex;
     width: 100%;
@@ -383,6 +388,10 @@
         width: 100%;
         padding: 0.1rem 3rem;
 
+    }
+
+    .donateForm .firstInfoWrapper p {
+        width: 80%;
     }
 
     .donateForm .moneyWrapper {

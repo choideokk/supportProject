@@ -54,6 +54,7 @@ selectInp.addEventListener("blur", () => {
 directMoneyInp.addEventListener("focus", () => {
     directMoneyInp.value = "";
     totalMoneyInp.value = "0";
+    warningTxt2.classList.add("isHidden");
     for (insideRadioBtn of moneyLabel) {
         insideRadioBtn.checked = false;
     }
@@ -98,6 +99,7 @@ goNextBtn.addEventListener("click", () => {
     progressCircle1.classList.toggle("isCompleted");
     progressCircle2.classList.toggle("isCompleted2");
     progressLine.classList.toggle("isIng");
+    warningTxt2.classList.add("isHidden");
 })
 
 goBackBtn.addEventListener("click", () => {
