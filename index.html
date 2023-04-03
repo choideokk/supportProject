@@ -12,7 +12,7 @@
 
 <body>
     <div class="header basicSet">
-        <h1>로고</h1>
+        <h1>🎨</h1>
         <nav class="topMenu">
             <ul>
                 <li>
@@ -34,7 +34,7 @@
     </div>
     <div class="vidPlayer">
         <button type="button" class="prevBtn vidBtn isHidden"></button>
-        <p class="vidTxt">동물들을 위한 후원 활동 어쩌고..
+        <p class="vidTxt">따뜻하고 아름다운 세상, 당신의 나눔으로 시작됩니다.
         </p>
         <div class="vidCarousel">
             <video muted autoplay loop src="./videos/pexels-c-technical-6133093.mp4" type="video/mp4"></video>
@@ -51,8 +51,8 @@
                         src="https://images.unsplash.com/photo-1560807707-8cc77767d783?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80" />
                 </div>
                 <div class="txtWrapper">
-                    <p>진행 사항</p>
-                    <p>활동 이름이 들어갈 곳입니다</p>
+                    <p class="currentStatusTxt">진행중</p>
+                    <p class="currentAct">[#wave] 챌린저스와 함께하는 플로깅 챌린지</p>
                     <p>23.02.10~</p>
                     <div class="percentBar">
                         <span class="insideBar" style="width: 16%;"></span>
@@ -67,8 +67,8 @@
                         src="https://images.unsplash.com/photo-1623430618732-6df749201127?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" />
                 </div>
                 <div class="txtWrapper">
-                    <p>진행 사항</p>
-                    <p>활동 이름이 들어갈 곳입니다</p>
+                    <p class="currentStatusTxt">진행중</p>
+                    <p class="currentAct">한 마을 한 우물 캠페인</p>
                     <p>23.02.10~</p>
                     <div class="percentBar">
                         <span class="insideBar" style="width: 38%;" />
@@ -83,9 +83,9 @@
                         src="https://images.unsplash.com/photo-1565671332768-30e20066fa4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" />
                 </div>
                 <div class="txtWrapper">
-                    <p>진행 사항</p>
-                    <p>활동 이름이 들어갈 곳입니다</p>
-                    <p>23.02.10~</p>
+                    <p class="currentStatusTxt">진행중</p>
+                    <p class="currentAct">지속가능한 환경을 위한 그린머니 모금</p>
+                    <p>22.06.10~</p>
                     <div class="percentBar">
                         <span class="insideBar" style="width: 80%;" />
                     </div>
@@ -99,9 +99,9 @@
                         src="https://images.unsplash.com/photo-1598898418413-88068eb17fc0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" />
                 </div>
                 <div class="txtWrapper">
-                    <p>진행 사항</p>
-                    <p>활동 이름이 들어갈 곳입니다</p>
-                    <p>23.02.10~</p>
+                    <p class="currentStatusTxt">진행중</p>
+                    <p class="currentAct">시골 유기견 보호소 사료 후원</p>
+                    <p>23.01.10~</p>
                     <div class="percentBar">
                         <span class="insideBar" style="width: 56%;" />
                     </div>
@@ -135,6 +135,41 @@
                 </a>
             </li>
         </ul>
+    </div>
+    <div class="noticesBlock basicSet">
+        <ul class="locateLists">
+            <li>
+                <button type="button" class="locateBtn isActive" data-position="0">전체</button>
+            </li>
+            <li>
+                <button type="button" class="locateBtn" data-position="-148">공지사항</button>
+            </li>
+            <li>
+                <button type="button" class="locateBtn" data-position="-295">보도자료</button>
+            </li>
+        </ul>
+        <div class="inNoticesBlock">
+            <div class="innerBlock">
+                <ul>
+                    <li>[정기 채용] (프로젝트명)_운영지원팀<span>03.27</span></li>
+                    <li>[참여] 국제 바다코끼리의 날 기념! (프로젝트명)과 함께 하는 후원 이벤트<span>03.23</span></li>
+                    <li>[정기 채용] (프로젝트명) 채용 공고(정책팀/연구소 마감)<span>03.13</span></li>
+                    <li>2021년 기부금품 모집 사용내역 보고<span>02.28</span></li>
+                </ul>
+                <ul>
+                    <li>[정기 채용] (프로젝트명)_운영지원팀<span>2023.03.27</span></li>
+                    <li>[정기 채용] (프로젝트명) 채용 공고(정책팀/연구소 마감)<span>2023.03.13</span></li>
+                    <li>2021년 기부금품 모집 사용내역 보고<span>2023.02.28</span></li>
+                    <li>[총회] 사단법인 롱초 2023 정기 총회 공고<span>2023.01.30</span></li>
+                </ul>
+                <ul>
+                    <li>[보도자료] 동물자유연대 고양이 전문 보호소 개관<span>2022.10.29</span></li>
+                    <li>[공동성명] 6.1 전국동시지방선거 동물권대선대응연대 공동성명<span>2022.06.02</span></li>
+                    <li>[논평] 아쉬움 남긴 10년만의 동물보호법 전부개정<span>2022.04.08</span></li>
+                    <li>[보도자료]동해시 사육곰 22마리가 미국으로 떠나는 사연은?<span>2023.03.13</span></li>
+                </ul>
+            </div>
+        </div>
     </div>
     <div class="totalSupport basicSet">
         <div class="innerTotal">
@@ -243,6 +278,9 @@
     </div>
     <a class="supportBtn" href="donate.html">
         ♥
+    </a>
+    <a href="" class="adBtn">
+        <img src="./imgs/umbrella.png" />
     </a>
     <script src="./js/common.js"></script>
     <script src="./js/index.js"></script>

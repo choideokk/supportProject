@@ -2,6 +2,7 @@
 const totalForm = document.donate;
 const warningTxts = document.querySelectorAll(".rightSide .warningTxt");
 const rightSideInputs = document.querySelectorAll(".rightSide input[type='text']");
+const cancelBtn = document.querySelector(".rightSide .cancelBtn");
 
 for (let i = 0; i < rightSideInputs.length; i++) {
     rightSideInputs[i].addEventListener("blur", () => {
@@ -27,4 +28,11 @@ totalForm.addEventListener("submit", (e) => {
 
     alert("후원해주셔서 감사합니다.");
     window.location.href = "http://127.0.0.1:5500/supportProject/index.html";
+})
+
+cancelBtn.addEventListener("click", () => {
+    const isOk = confirm("정말로 후원을 취소하시겠습니까?");
+    if (isOk) {
+        window.location.href = "http://127.0.0.1:5500/supportProject/index.html";
+    }
 })

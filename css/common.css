@@ -56,11 +56,12 @@ button {
     height: 80px;
     justify-content: space-between;
     align-items: center;
-    background-color: whitesmoke;
+    background-color: #fafafa;
+    border-bottom: 3px solid #28B171;
 }
 
 .header h1 {
-    color: #003166;
+    color: #28B171;
 }
 
 .header .topMenu li {
@@ -74,7 +75,7 @@ button {
 }
 
 .header .topMenu li a:visited{
-    color: #003166;
+    color: #28B171;
 }
 
 .footer {
@@ -106,7 +107,7 @@ button {
     color:#e8e8e8;
     font-size: 38px;
     line-height: 3rem;
-    background-color: #003166;
+    background-color: #28B171;
 }
 
 .supportBtn:visited {
@@ -118,16 +119,31 @@ button {
     font-size: 34px;
 }
 
-@media screen and (max-width: 786px) {
-    body {
-        padding-top: 0;
-    } 
+.adBtn {
+    position: fixed;
+    right: 10px;
+    bottom: 90px;
+    z-index: 10;
+    width: 4rem;
+    height: 4rem;
+}
 
+.adBtn img {
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 786px) {
     .header {
-        position: relative;
+        position: fixed;
+        box-shadow: 1px -2px 6px 2px rgba(0, 0, 0, .11);
     }
 
     .header .topMenu {
+        top: 80%;
+    }
+
+    .header .topMenu li {
         display: none;
     }
 
@@ -136,15 +152,17 @@ button {
         position: absolute;
         top: 100%;
         left: 0;
-        z-index: 10;
+        z-index: 0;
         width: 100%;
+        border-bottom: 3px solid #28B171;
+        transition: all .5s ease;
     }
 
     .header .isVisible li {
         display: block;
         position: relative;
         width: 100%;
-        background-color: whitesmoke;
+        background-color: #fafafa;
         text-align: center;
         padding: 10px;
         font-size: 20px;
@@ -152,7 +170,7 @@ button {
     }
 
     .header .isVisible li:hover a {
-        color: #663500;
+        color: #AF0E59;
     }
 
     .header .isVisible li a {
@@ -178,7 +196,7 @@ button {
         height: 2px;
         border-radius: 4px;
         margin: 0 auto;
-        background-color: #003166;
+        background-color: #28B171;
     }
 
     .menuBtn span:first-child {
