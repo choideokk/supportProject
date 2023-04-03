@@ -36,7 +36,7 @@
     <div class="mainTitle">
         <h1>후원하기</h1>
     </div>
-    <form class="donateForm">
+    <form class="donateForm" name="donate">
         <div class="formInner">
             <div class="progressBar">
                 <span class="circle circle1"></span>
@@ -47,9 +47,9 @@
             <div class="leftSide basicSet">
                 <label>후원 방법</label>
                 <div class="sendWrapper inpType1">
-                    <input type="radio" id="send" class="regularSend" name="sendType" checked />
+                    <input type="radio" id="send" class="regularSend" name="sendType" checked value="정기후원" />
                     <label for="send">정기후원</label>
-                    <input type="radio" id="send2" class="onceSend " name="sendType" />
+                    <input type="radio" id="send2" class="onceSend " name="sendType" value="일시후원" />
                     <label for="send2">일시후원</label>
                 </div>
                 <label>성별</label>
@@ -59,17 +59,17 @@
                 </div>
                 <label>후원 목록
                     <div class="listWrapper">
-                        <select class="dnList">
-                            <option>후원 활동 선택</option>
-                            <option>[#wave] 챌린저스와 함께하는 플로깅 챌린지</option>
-                            <option>지속가능한 환경을 위한 그린머니 모금</option>
-                            <option>한 마을 한 우물 캠페인</option>
-                            <option>시골 유기견 보호소 사료 후원</option>
+                        <select class="dnList" name="actsList">
+                            <option value="">후원 활동 선택</option>
+                            <option value="[#wave] 챌린저스와 함께하는 플로깅 챌린지">[#wave] 챌린저스와 함께하는 플로깅 챌린지</option>
+                            <option value="지속가능한 환경을 위한 그린머니 모금">지속가능한 환경을 위한 그린머니 모금</option>
+                            <option value="한 마을 한 우물 캠페인">한 마을 한 우물 캠페인</option>
+                            <option value="시골 유기견 보호소 사료 후원">시골 유기견 보호소 사료 후원</option>
                         </select>
                     </div>
-                    <span class="warningTxt" style="font-size: 16px; color: red;">필수 선택입니다</span>
+                    <span class="warningTxt warningActTxt isHidden">필수 선택입니다</span>
                 </label>
-                <label>후원 금액(원)<span style="font-size: 14px;">※ 원하시는 금액을 선택해 주세요</span></label>
+                <label>후원 금액(원)<span class="infoTxt">※ 원하시는 금액을 선택해 주세요</span></label>
                 <div class="moneyWrapper">
                     <label for="five"><input type="radio" name="money" value="50000" id="five" />50,000원</label>
                     <label for="seven">
@@ -78,8 +78,10 @@
                     <label for="ten">
                         <input type="radio" name="money" value="100000" id="ten" />100,000원
                     </label>
-                    <input id="moneyInp" autocomplete="false" autocapitalize="false" type="text" name="money"
-                        maxlength="7" placeholder="직접 입력" />
+                    <input id="moneyInp" autocomplete="false" autocapitalize="false" type="number" name="moneyInput"
+                        min="1000" max="9999999" placeholder="직접 입력" />
+                    <span class="warningTxt isHidden warningMoneyTxt 
+                    ">최대 후원 금액은 1,000,000 미만입니다</span>
                 </div>
                 <label class="totalCost">
                     <div>
@@ -109,14 +111,17 @@
                     </div>
                 </label>
                 <label for="accountInp">계좌번호</label>
-                <input type="text" id="accountInp" placeholder="-없이 입력해주세요" autocomplete="false" />
-                <br />
+                <input type="text" id="accountInp" placeholder="-없이 입력해주세요" autocomplete="false" name="account"
+                    maxlength="13" />
+                <span class="warningTxt warning1 isHidden">필수 입력칸입니다</span>
                 <label for="accountNameInp">예금주명</label>
-                <input id="accountNameInp" type="text" autocomplete="false" />
-                <br />
+                <input id="accountNameInp" type="text" autocomplete="false" name="master" maxlength="5"
+                    placeholder="예금주명을 입력해주세요" />
+                <span class="warningTxt warning1 isHidden">필수 입력칸입니다</span>
                 <label for="birthInp">생년월일 6자리</label>
-                <input type="text" autocomplete="false" id="birthInp" placeholder="주민번호 앞 6자리를 입력해주세요" maxlength="6" />
-                <br />
+                <input type="text" autocomplete="false" id="birthInp" name="birth" placeholder="주민번호 앞 6자리를 입력해주세요"
+                    maxlength="6" />
+                <span class="warningTxt warning1 isHidden">필수 입력칸입니다</span>
                 <p class="withdraw basicSet">
                     [출금정책 안내]
                     <br />
@@ -130,9 +135,11 @@
                     </strong>
                     　예) 5월분 1만원의 미출금으로 6월에 5,6월분 합계인 2만원이 출금
                 </p>
-                <label>
-                    [필수] 개인정보 수집 및 이용동의
-                    <input type="checkbox" />
+                <label class="explainBlock">
+                    <strong>[필수]</strong>
+                    개인정보 수집 및 이용동의
+                    <input type="checkbox" id="ch1" />
+                    <label for="ch1"></label>
                     <p class="detailExplanation">
                         [개인정보 처리방침]
 
@@ -196,9 +203,11 @@
                         ① 이 개인정보 처리방침은 2014. 10. 21에 개정되었습니다.
                     </p>
                 </label>
-                <label>
-                    [필수] CMS자동이체 업무처리 관련
-                    <input type="checkbox" />
+                <label class="explainBlock">
+                    <strong>[필수]</strong>
+                    CMS자동이체 업무처리 관련
+                    <input type="checkbox" id="ch2" />
+                    <label for="ch2"></label>
                     <p class="detailExplanation">
                         1. 개인정보 및 고유식별정보 수집 및 이용동의
                         ▶ 수집 및 이용목적 : CMS자동이체를 통한 요금 수납
@@ -225,8 +234,7 @@
                     </p>
                 </label>
                 <div class="submitDiv">
-                    <button type="button">후원</button>
-                    <button type="button">취소</button>
+                    <button type="submit" class="submitBtn">후원</button><button type="button">취소</button>
                 </div>
             </div>
         </div>
@@ -264,6 +272,7 @@
     </div>
     <script src="./js/common.js"></script>
     <script src="./js/donate.js"></script>
+    <script src="./js/donate2.js"></script>
 </body>
 
 </html>

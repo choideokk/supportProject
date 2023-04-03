@@ -16,14 +16,26 @@ body {
     padding-top: 80px;
 }
 
-select {
+select, input[type="checkbox"] {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    text-transform: none;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
 }
 
 li {
     list-style: none;
+}
+
+button {
+    cursor: pointer;
 }
 
 .basicSet {
