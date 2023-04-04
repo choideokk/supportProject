@@ -97,6 +97,10 @@
     transition-timing-function: ease-out;
 }
 
+.main h1 span, .secondMain h1 span, .eventBlock h1 span {
+    color:#28B171;
+}
+
 
 .main .activityList {
     display: grid;
@@ -202,19 +206,47 @@
     transform: scale(1.1);
 }
 
-.eventBlock h2 {
-    margin-bottom: 20px;
+.eventBlock .eventBLWrapper {
+    overflow-x: hidden;
 }
 
 .eventBlock ul {
     display: flex;
+    transition-property: all;
+    transition-duration: .7s;
+    transition-timing-function: ease;
+    margin-top: 20px;
 }
 
 .eventBlock ul li {
-    width: 50%;
-    height: 120px;
-    cursor: pointer;
+    width: 100%;
+    height: 100px;
+    min-width: calc(100% / 3);
+    display: inline-block;
+    background-color: #ffc300;
+    border: 1px solid black;
 }
+
+.eventBlock .percent {
+    width: 100%;
+    height: 5px;
+    background-color: #e8e8e8;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+.eventBlock .percent span {
+    display: block;
+    width: calc((100% / 3)*2);
+    height: 5px;
+    background-color: #28B171;
+    border-radius: 4px;
+    transition-property: all;
+    transition-duration: .7s;
+    transition-timing-function: ease;
+}
+
+
 
 .eventBlock .waveEvent {
     padding: 10px;
@@ -242,46 +274,6 @@
     background-image: url("https://www.icegif.com/wp-content/uploads/2023/03/icegif-39.gif");
 }
 
-.backEvent {
-    background-color: #ffc300;
-    font-size: 28px;
-    font-weight: 700;
-    text-align: center;
-}
-
-.backEvent a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.backEvent .mention span {
-    display: inline-block;
-    animation-name: flicker;
-    animation-iteration-count: infinite;
-    animation-duration: .4s;
-    animation-direction: alternate;
-}
-
-.backEvent .pngWrapper {
-    width: 8rem;
-    height: 8rem;
-}
-
-.backEvent .pngWrapper::before {
-    position: absolute;
-    content: "✨";
-    width: 8px;
-    height: 8px;
-    font-size: 26px;
-}
-
-.backEvent  .pngWrapper img {
-    width: 100%;
-    height: 100%;
-}
-
 .noticesBlock {
     width: 100%;
     overflow: hidden;
@@ -297,7 +289,7 @@
 }
 
 .locateLists li .locateBtn {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     background: none;
     border: 0;
     padding: 0 10px;
@@ -323,6 +315,7 @@
     width: 100%;
     max-width: 100%;
     height: 100%;
+    max-height: 100%;
 }
 
 .noticesBlock .inNoticesBlock ul li {
@@ -331,6 +324,17 @@
     font-size: 1rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 5px;
+}
+
+.noticesBlock .inNoticesBlock li span {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .inNoticesBlock .innerBlock {
@@ -522,25 +526,51 @@
         padding-top: 4em;
     }
 
-    .eventBlock ul  {
-      flex-direction: column;
-      align-items: center;
+    .eventBlock ul li {
+        width: 100%;
+        height: 100px;
+        min-width: calc(100% / 3);
+        display: inline-block;
+        background-color: #ffc300;
+        border: 1px solid black;
     }
-
-    .eventBlock ul li  {
-       width: 100%;
-       font-size: 24px;
-    }
-
+    
 
     .waveEvent .bgGif {
         font-size: 46px;
+    }
+
+    .noticesBlock .inNoticesBlock ul li {
+        display: block;
+    }
+
+
+    .noticesBlock .inNoticesBlock li span {
+        display: none;
     }
 
 }
 
 @media screen and (max-width: 375px) {
     .main .totalMoney {
+        display: none;
+    }
+
+    .eventBlock ul {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .eventBlock ul li {
+        width: 100%;
+        height: 100px;
+        min-width: 50%;
+        display: inline-block;
+        background-color: #ffc300;
+        border: 1px solid black;
+    }
+
+    .eventBlock .carouselBtns, .percent {
         display: none;
     }
 }

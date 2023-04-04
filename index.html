@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/common.css" type="text/css">
     <link rel="stylesheet" href="./css/index.css" type="text/css">
+    <link rel="stylesheet" href="./css/index2.css" type="text/css">
     <title>Document</title>
 </head>
 
@@ -43,7 +44,10 @@
         <button type="button" class="nextBtn vidBtn"></button>
     </div>
     <div class="main basicSet">
-        <h2>진행중인 후원</h2>
+        <h1 class="firstH1">지구의 미래를 밝히는 <span>
+                후원 캠페인
+            </span>
+        </h1>
         <ul class="activityList">
             <li>
                 <div class="imgWrapper">
@@ -111,30 +115,71 @@
             </li>
         </ul>
     </div>
+    <div class="basicSet companyInfoWrapper">
+        <h1>투명하고 믿을 수 있는 <span>롱초</span>재단</h1>
+        <p class="mainTxt">미래세대에게 행복한 내일을,<br /> 후원자에겐 나누는 즐거움을 주는 다양한 활동을 펼치고 있습니다.</p>
+        <ul class="infoBtsWrapper">
+            <li><button>롱초재단 이야기</button></li>
+            <li><button>후원금, 어떻게 사용되나요?</button></li>
+            <li><button>후원에 대한 12가지 궁금증</button></li>
+        </ul>
+        <div class="companyInfoBottom">
+            <ul class="leftWing">
+                <li>
+                    <img src="https://www.childfund.or.kr/resources/images/main/ic_crown_v2.png" />
+                    <p>한국 가이드 스타 6년 연속 별점 만점</p>
+                </li>
+                <li>
+                    <img src="https://www.childfund.or.kr/resources/images/main/ic_samil_v2.png" />
+                    <p>사밀 투명 경영 대상</p>
+                </li>
+                <li>
+                    <img src="https://www.childfund.or.kr/resources/images/main/ic_accountable_v2.png" />
+                    <p>AccountNow 멤버</p>
+                </li>
+                <li>
+                    <img src="https://www.childfund.or.kr/resources/images/main/ic_privacy.png" />
+                    <p>개인정보보호위원회 장관표창</p>
+                </li>
+            </ul>
+            <ul class="rightWing">
+                <li>
+                    <p><strong class="firstNum">0</strong>년</p>
+                    <p>1990년 시작된 롱초재단의 역사</p>
+                </li>
+                <li>
+                    <p><strong class="secondNum">0</strong>만명</p>
+                    <p>마음을 나누어주신 든든한 후원자님</p>
+                </li>
+                <li>
+                    <p><strong class="thirdNum">0</strong>개</p>
+                    <p>후원의 손길이 닿은 곳</p>
+                </li>
+            </ul>
+        </div>
+    </div>
     <div class="eventBlock basicSet">
-        <h2>진행중인 이벤트</h2>
-        <ul>
-            <li class="backEvent">
-                <a>
-                    <div class="pngWrapper">
-                        <img src="https://cdn-icons-png.flaticon.com/512/3787/3787677.png" />
-                    </div>
-                    <div class="mention">
-                        <span>
-                            정기후원 신청
-                        </span>하고
-                        <br />굿즈 GET!
-                    </div>
-                </a>
-            </li>
-            <li class="waveEvent">
-                <a class="insideBg">
-                    <span class="bgGif">
-                        #LOVEWAVE
+        <h1 class="secondH1">진행중인 <span>이벤트</span></h1>
+        <div class="eventBLWrapper">
+            <ul>
+                <li>1번이벤트</li>
+                <li>2번이벤트</li>
+                <li>3번이벤트</li>
+                <li>4번이벤트</li>
+                <!-- <li class="waveEvent">
+                    <a class="insideBg">
+                        <span class="bgGif">
+                            #LOVEWAVE
                     </span>
                 </a>
-            </li>
-        </ul>
+            </li> -->
+            </ul>
+            <div class="percent"><span></span></div>
+            <div class="carouselBtns">
+                <button class="goLeftBtn">앞으로</button>
+                <button class="goRightBtn">뒤로</button>
+            </div>
+        </div>
     </div>
     <div class="noticesBlock basicSet">
         <ul class="locateLists">
@@ -177,21 +222,18 @@
             <ul>
                 <li>
                     기부 참여
-                    <span>3777</span>명
+                    <span>3,777</span>명
                 </li>
                 <li>
                     기부 금액
-                    <span>13803600</span>원
+                    <span>2,803,600</span>원
                 </li>
             </ul>
         </div>
     </div>
-    <div class="basicSet">
-        핵심가치 어쩌고 (보류)
-    </div>
     <div class="secondMain basicSet">
         <div class="secondTxt">
-            <h2>지난 후원 내역</h2>
+            <h1 class="lastH1">지난 후원 <span>소식</span></h1>
             <p>총 <strong>7360932</strong>원 기부 완료!</p>
         </div>
         <ul class="activityList">
@@ -276,14 +318,12 @@
         </div>
 
     </div>
-    <a class="supportBtn" href="donate.html">
-        ♥
-    </a>
     <a href="" class="adBtn">
         <img src="./imgs/umbrella.png" />
     </a>
     <script src="./js/common.js"></script>
     <script src="./js/index.js"></script>
+    <script src="./js/index2.js"></script>
 </body>
 
 </html>
