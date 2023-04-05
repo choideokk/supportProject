@@ -11,9 +11,6 @@ const prevBtn = document.querySelector(".vidPlayer .prevBtn");
 const nextBtn = document.querySelector(".vidPlayer .nextBtn");
 const locateBtns = document.querySelectorAll(".locateBtn");
 
-const subscribeForm = document.querySelector(".subscribeForm");
-
-
 for (let i = 0; i < locateBtns.length; i++) {
     locateBtns[i].addEventListener("click", (e) => {
         for (btn of locateBtns) {
@@ -37,9 +34,4 @@ nextBtn.addEventListener("click", () => {
     vidTxt.textContent = vidTxtArr[1];
     vidCarousel.style.transform = "translateX(-100%)";
     nextBtn.classList.toggle("isHidden");
-})
-
-subscribeForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    console.log("제출!");
 })

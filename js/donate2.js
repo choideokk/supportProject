@@ -26,13 +26,31 @@ totalForm.addEventListener("submit", (e) => {
 
     if (donateBirth === "" || (!isAllChecked)) return;
 
-    alert("후원해주셔서 감사합니다.");
-    window.location.href = "http://127.0.0.1:5500/supportProject/index.html";
+    let timerInterval;
+    Swal.fire({
+        title: '후원해주셔서 감사합니다.',
+        timer: 1500,
+        timerProgressBar: true,
+        willClose: () => {
+            clearInterval(timerInterval)
+            window.location.href = "http://127.0.0.1:5500/supportProject/index.html";
+        }
+    })
 })
 
 cancelBtn.addEventListener("click", () => {
-    const isOk = confirm("정말로 후원을 취소하시겠습니까?");
-    if (isOk) {
-        window.location.href = "http://127.0.0.1:5500/supportProject/index.html";
-    }
+
+    Swal.fire({
+        title: '정말로 후원을 취소하시겠습니까?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#797979',
+        confirmButtonText: '네',
+        cancelButtonText: '아니요'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = "http://127.0.0.1:5500/supportProject/index.html";
+        }
+    })
 })

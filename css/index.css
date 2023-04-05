@@ -54,22 +54,26 @@
 }
 
 .nextBtn::before {
+    position: relative;
+    top: -20px;
     transform: rotate(45deg);
 }
 
 .nextBtn::after {
     position: relative;
-    top: 40px;
+    top: 20px;
     transform: rotate(315deg);
 }
 
 .prevBtn::before {
     transform: rotate(-45deg);
+    position: relative;
+    top: -20px;
 }
 
 .prevBtn::after {
     position:relative;
-    top: 18px;
+    top: 0px;
     left: 10px;
     transform-origin: top left;
     transform: rotate(45deg);
@@ -77,17 +81,17 @@
 
 .vidPlayer .vidTxt {
     position: absolute;
-    top: 45%;
-    left: 30%;
+    top: 50%;
+    left: 50%;
     width: 40%;
     max-width: 700px;
-    /* background-color: aquamarine; */
     z-index: 5;
     text-align: center;
     font-size: 40px;
     word-wrap: normal;
     color: white;
     text-shadow: 2px 2px 1px black;
+    transform: translate(-50%, -50%);
 }
 
 .vidPlayer .vidCarousel {
@@ -557,8 +561,8 @@
 
     .vidPlayer .vidTxt {
         position: absolute;
-        top: 45%;
-        left: 25%;
+        top: 50%;
+        left: 50%;
         width: 60%;
         max-width: 700px;
         z-index: 5;
@@ -567,6 +571,7 @@
         word-wrap: normal;
         color: white;
         text-shadow: 2px 2px 1px black;
+        transform: translate(-50%, -50%);
     }
     
 
