@@ -80,13 +80,127 @@ button {
 
 .footer {
     display: flex; 
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 150px;
     border-top: 1px solid rgba(0, 0, 0, .11);
-    padding: 30px; 
     margin-top: 100px;
     box-shadow: rgba(0, 0, 0, 0.08) 0px 6px 5px 6px;
+    color: #828385;
+}
+
+.footer .footUp h1 {
+    color: black;
+}
+
+.footer .footUp {
+    display: flex; 
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px 30px 0;
+}
+
+.footer .footBottom {
+    display: flex;
+    margin-top: 15px;
+    width: 100%;
+    max-width: 1280px;
+    padding: 0 30px;
+    margin-bottom: 30px;
+}
+
+.footer .footBottom h4 {
+    position:relative;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.footer .footBottom h4:after {
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    content: "";
+    width: 20px;
+    height: 2px;
+    display: inline-block;
+    background-color: #28B171;
+}
+
+.footer .snsBtns li {
+    display: inline-block;
+}
+
+.footer .snsBtns li button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 24px;
+    border: none;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.youtubeBtn {
+    background-color: #D40A18;
+}
+
+.fbBtn {
+    background-color: #3A5195;
+}
+
+.twitterBtn {
+    background-color: #00A8FF;
+}
+
+.instaBtn {
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+}
+
+
+.footBottom .footBlock {
+    width: 25%;
+    margin-right: 3px;
+}
+
+.footBlock .subscribeForm {
+    width: 100%;
+}
+
+.footBlock .subscribeForm input[type="email"] {
+    width: 100%;
+    min-width: 100%;
+    padding: 6px;
+}
+
+.footBlock .contactList i {
+    margin-right: 5px;
+}
+
+.footBlock .linksList li:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.footBlock .subscribeForm button {
+    width: 100%;
+    padding: 6px;
+    margin-top: 10px;
+    background-color: #fafafa;
+    border: 2px solid #28B171;
+}
+
+.footBlock .subscribeForm button:hover {
+    background-color: #28B171;
+    color: white;
+}
+
+.footer .copyRight {
+    width: 100%;
+    padding: 8px;
+    background-color: #28B171;
+    color: #fafafa;
 }
 
 .menuBtn {
@@ -133,7 +247,7 @@ button {
     height: 100%;
 }
 
-@media screen and (max-width: 786px) {
+@media screen and (max-width: 768px) {
     .header {
         position: fixed;
         box-shadow: 1px -2px 6px 2px rgba(0, 0, 0, .11);
@@ -228,5 +342,27 @@ button {
         transform-origin: 0 0;
         transform: rotate(-30deg);
     }
+ 
+    .footBottom {
+        flex-direction: column;
+    }
+
+    .footBottom .footBlock {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .footBlock .contactList li {
+        width: 100%;
+    }
     
+    .footBottom .footBlock ul li {
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .newsletter {
+        display: none;
+    }
 }

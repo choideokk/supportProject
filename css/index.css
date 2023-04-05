@@ -213,26 +213,89 @@
 .eventBlock ul {
     display: flex;
     transition-property: all;
-    transition-duration: .7s;
+    transition-duration: .6s;
     transition-timing-function: ease;
     margin-top: 20px;
 }
 
+.eventBlock .goLeft {
+    transform: translateX(0%);
+}
+
+.eventBlock .goRight {
+    transform: translateX(-13%);
+}
+
 .eventBlock ul li {
+    position: relative;
+    display: flex;
+    align-items: end;
+    font-size: 1.5rem;
+    font-weight: bolder;
     width: 100%;
-    height: 100px;
-    min-width: calc(100% / 3);
-    display: inline-block;
-    background-color: #ffc300;
-    border: 1px solid black;
+    height: 200px;
+    min-width: 38%;
+    background-position: 0 0;
+    background-size: 100% 100%;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.eventBlock ul .event1 {
+    color: #f58282;
+}
+
+.eventBlock ul .event2 {
+    color:#3f51b5; 
+    text-shadow: 3px 2px palegreen;
+}
+.eventBlock ul .event3 {
+    color:#e91e63;
+    text-shadow: 3px 2px rgb(52, 54, 52);
+}
+
+.eventBlock .eventBLWrapper li img{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: .3s all ease;
+}
+
+.eventBlock ul li:hover img {
+    transform: scale(1.1);
 }
 
 .eventBlock .percent {
-    width: 100%;
+    display: inline-block;
+    width: 80%;
     height: 5px;
     background-color: #e8e8e8;
-    margin-top: 10px;
     border-radius: 4px;
+    /* margin-top: 35px; */
+}
+
+.eventBlock .carouselBtns {
+    display: inline-flex;
+    justify-content: end;
+    width: 19%;
+    margin-top: 20px;
+}
+
+.eventBlock .carouselBtns button{
+    font-size: 24px;
+    border: none;
+    background-color: white;
+    border-radius: 50%;
+    width: 100%;
+    max-width: 60px;
+    height: 100%;
+    max-height: 60px;
+    line-height: 60px;
+    margin-left: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 .eventBlock .percent span {
@@ -242,30 +305,38 @@
     background-color: #28B171;
     border-radius: 4px;
     transition-property: all;
-    transition-duration: .7s;
+    transition-duration: .6s;
     transition-timing-function: ease;
 }
 
-
-
 .eventBlock .waveEvent {
-    padding: 10px;
+    background-position: bottom;
+}
+
+.waveEvent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 160px;
+    margin: 10px 0;
     background-position: bottom;
     background-image: url("https://www.icegif.com/wp-content/uploads/2023/03/icegif-39.gif");
 }
 
-.waveEvent .insideBg {
-    display: block;
-    background-color: #fafafa;
-    text-decoration: none;
+.waveEvent .waveInner {
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    height: 90%;
 }
 
-.waveEvent .bgGif {
-    display: block;
-    user-select: none;
-    text-align: center;
-    font-size: 52px;
-    line-height: 100px;
+.waveInner .waveTxt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 3.4rem;
     font-weight: bolder;
     color: transparent;
     background-clip: text;
@@ -277,6 +348,7 @@
 .noticesBlock {
     width: 100%;
     overflow: hidden;
+    margin: 20px 0;
 }
 
 .noticesBlock .locateLists {
@@ -358,16 +430,35 @@
 
 .totalSupport {
     width: 100%;
+    height: 150px;
     background-color: #28B171;
+    margin: 40px 0;
 }
 
 .innerTotal {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 80%;
+    height: 100%;
     margin: 0 auto;
     color: white;
     font-size: 24px;
+}
+
+.innerTotal div {
+    display: flex;
+    flex-direction: column;
+}
+
+.innerTotal .currentTxt {
+    font-size: 17px;
+    background-color: #208d5a;
+    width: 150px;
+    text-align: center;
+    padding: 6px 14px 5px;
+    border-radius: 12px;
+    margin-bottom: 5px;
 }
 
 .secondTxt {
@@ -405,7 +496,7 @@
     width: 100%;
     min-width: 172px;
     height: 100%;
-    max-height: 250px;
+    max-height: 280px;
     overflow: hidden;
     padding: 10px;
     background-color: #fafafa;
@@ -437,8 +528,7 @@
     background: linear-gradient(to top, #ffc300 50%, transparent 50%);
 }
 
-@media screen and (max-width: 786px) {
-
+@media screen and (max-width: 768px) {
     .nextBtn::before, .nextBtn::after, .prevBtn::after, .prevBtn::before {
         width: 30px;
     }
@@ -517,27 +607,43 @@
         max-height: 280px;
     }
 
-
     .innerTotal {
         flex-direction: column;
+        justify-content: center;
     }
 
     .secondMain .imgWrapper .imgCover {
         padding-top: 4em;
     }
 
-    .eventBlock ul li {
-        width: 100%;
-        height: 100px;
-        min-width: calc(100% / 3);
-        display: inline-block;
-        background-color: #ffc300;
-        border: 1px solid black;
+    .waveEvent {
+        height: 130px;
+        margin: 10px 0;
     }
     
+    .waveEvent .waveTxt {
+        font-size: 2.5rem;
+    }
 
-    .waveEvent .bgGif {
-        font-size: 46px;
+    .eventBlock ul li {
+        height: 150px;
+    }
+    
+    .eventBlock .carouselBtns {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .eventBlock .carouselBtns button {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .eventBlock .percent {
+        width: 100%;
+        margin-top: 20px;
     }
 
     .noticesBlock .inNoticesBlock ul li {
@@ -549,9 +655,12 @@
         display: none;
     }
 
+    .totalSupport .innerTotal p {
+        display: none;
+    }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 480px) {
     .main .totalMoney {
         display: none;
     }
@@ -560,17 +669,21 @@
         width: 100%;
         flex-wrap: wrap;
     }
-
+    
     .eventBlock ul li {
-        width: 100%;
-        height: 100px;
-        min-width: 50%;
-        display: inline-block;
-        background-color: #ffc300;
-        border: 1px solid black;
+        height: 150px;
     }
-
-    .eventBlock .carouselBtns, .percent {
+    
+    .eventBlock .carouselBtns, .eventBlock .percent {
         display: none;
     }
+    
+    .eventBlock .eventBLWrapper ul {
+        transform: translateX(0%);
+    }
+
+    .waveEvent .waveTxt {
+        font-size: 3.2rem;
+    }
+
 }

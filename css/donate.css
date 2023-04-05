@@ -375,7 +375,7 @@
     background-color: #2969B3;
 }
 
-@media screen and (max-width: 786px) {
+@media screen and (max-width: 768px) {
     .donateForm {
         flex-direction: column;
     }
@@ -424,7 +424,7 @@
     
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 480px) {
     .infoTxt {
         display: block;
     }

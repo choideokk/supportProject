@@ -16,19 +16,21 @@ const secondH1 = document.querySelector(".secondH1");
 const lastH1 = document.querySelector(".lastH1");
 
 goLeftBtn.addEventListener("click", () => {
-    eventCarouselInner.style.transform = "translateX(0)";
+    eventCarouselInner.classList.add("goLeft");
+    eventCarouselInner.classList.remove("goRight");
     eventPercent.style.transform = "translateX(0)";
 })
 goRightBtn.addEventListener("click", () => {
-    eventCarouselInner.style.transform = `translateX(-${(100 / 3)}%)`;
+    eventCarouselInner.classList.add("goRight");
+    eventCarouselInner.classList.remove("goLeft");
     eventPercent.style.transform = `translateX(50%)`;
 })
 
 window.onscroll = () => {
     const infoTop = companyInfoWrapper.getBoundingClientRect().top;
+    const infoBottom = companyInfoWrapper.getBoundingClientRect().bottom - 80;
     const windowHeight = window.innerHeight;
-
-    if (infoTop < windowHeight && infoTop > 0) {
+    if (infoTop < windowHeight && infoBottom > 0) {
         if (!timer) {
             timer = setTimeout(() => {
                 timer = null;
