@@ -68,6 +68,7 @@ button {
     display: inline-block;
     list-style: none;
     cursor: pointer;
+    margin-right: 5px;
 }
 
 .header .topMenu li a {
@@ -255,41 +256,6 @@ button {
 
     .header .topMenu {
         top: 80%;
-    }
-
-    .header .topMenu li {
-        display: none;
-    }
-
-    .header .isVisible {
-        display: block;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        z-index: 0;
-        width: 100%;
-        border-bottom: 3px solid #28B171;
-        transition: all .5s ease;
-    }
-
-    .header .isVisible li {
-        display: block;
-        position: relative;
-        width: 100%;
-        background-color: #fafafa;
-        text-align: center;
-        padding: 10px;
-        font-size: 20px;
-        font-weight: 700;
-    }
-
-    .header .isVisible li:hover a {
-        color: #AF0E59;
-    }
-
-    .header .isVisible li a {
-        display: block;
-        text-decoration: none;
     }
 
     .menuBtn {

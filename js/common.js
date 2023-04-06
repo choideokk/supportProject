@@ -1,13 +1,5 @@
-const menuBtn = document.querySelector(".menuBtn");
-const menuList = document.querySelector(".topMenu");
 const subscribeForm = document.querySelector(".subscribeForm");
 const emailInput = document.querySelector(".subscribeForm input[type='email']");
-
-
-menuBtn.addEventListener('click', () => {
-    menuList.classList.toggle('isVisible');
-    menuBtn.classList.toggle('isCross');
-})
 
 subscribeForm.addEventListener("submit", (e) => {
     e.preventDefault();

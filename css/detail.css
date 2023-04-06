@@ -204,6 +204,17 @@
     background-color: #28B171;
 }
 
+.upInfos .percentBar span::after{ 
+    position: relative;
+    display: block;
+    content: "";
+    left: 50%;
+    width: 50%;
+    height: 5px;
+    background-color: tomato;
+}
+
+
 .upInfos .limit { 
     color:#646464;
     font-size: 18px;
@@ -220,7 +231,7 @@
 
 .upInfos .numAreas p {
     color:#646464;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 .upInfos .numAreas p strong{
@@ -228,6 +239,11 @@
     color: #4a4a4a;
 }
 
+.upInfos .numAreas .twinsCompany {
+    color:tomato;
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
 
 .upInfos a {
     display: block;
@@ -401,9 +417,15 @@
         display:inline-block;
     }
 
+    .upInfos .numAreas .twinsCompany {
+        display: block;
+    }
+    
+
     .infoArea .per strong {
         font-size: 1.5rem;
     }
+
 
     .infoArea .limit {
         position: relative;
