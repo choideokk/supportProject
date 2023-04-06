@@ -50,7 +50,7 @@ cancelBtn.addEventListener("click", () => {
         cancelButtonText: '아니요'
     }).then((result) => {
         if (result.isConfirmed) {
-            window.location.href = "http://127.0.0.1:5500/supportProject/index.html";
+            window.location.href = "../index.html";
         }
     })
 })
