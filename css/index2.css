@@ -1,14 +1,4 @@
 
-@keyframes goUp {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0px);
-    }
-}
 .companyInfoWrapper {
     background-image: url("https://www.childfund.or.kr/resources/images/main/bg_openbiz.png");
     background-repeat: no-repeat;
@@ -17,15 +7,10 @@
 
 .companyInfoWrapper h1 {
     font-size: 42px;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
 }
-
-.animateOne {
-    animation-name: goUp;
-    animation-duration: 1s;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-}
-
 
 .companyInfoWrapper h1 span {
     color: #28B171;

@@ -84,8 +84,8 @@ function countUp2(element, interval) {
 function scrollAniEvent(element) {
     const elementTop = element.getBoundingClientRect().top;
     if (elementTop < window.innerHeight && elementTop > 0) {
-        element.classList.add("animateOne");
+        element.classList.add("animate__fadeInUp");
     } else {
-        element.classList.remove("animateOne");
+        element.classList.remove("animate__fadeInUp");
     }
 }
