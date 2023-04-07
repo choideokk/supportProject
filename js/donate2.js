@@ -1,6 +1,7 @@
 
 const totalForm = document.donate;
-const warningTxts = document.querySelectorAll(".rightSide .warningTxt");
+const warningTxts = document.querySelectorAll(".rightSide .warning1");
+const checkTxt = document.querySelector(".rightSide .checkTxt");
 const rightSideInputs = document.querySelectorAll(".rightSide input[type='text']");
 const cancelBtn = document.querySelector(".rightSide .cancelBtn");
 
@@ -22,9 +23,12 @@ totalForm.addEventListener("submit", (e) => {
     const donateCheck = document.querySelectorAll(".rightSide input[type='checkbox']");
     isAllChecked = donateCheck[0].checked && donateCheck[1].checked;
 
-    if (donateAccount === "" || donateMaster === "") return;
+    if (donateAccount === "" || donateMaster === "" || donateBirth === "") return;
 
-    if (donateBirth === "" || (!isAllChecked)) return;
+    if (!isAllChecked) {
+        checkTxt.classList.remove("isHidden");
+        return;
+    }
 
     let timerInterval;
     Swal.fire({
@@ -39,7 +43,6 @@ totalForm.addEventListener("submit", (e) => {
 })
 
 cancelBtn.addEventListener("click", () => {
-
     Swal.fire({
         title: '정말로 후원을 취소하시겠습니까?',
         icon: 'warning',

@@ -38,7 +38,7 @@
     margin-bottom: 30px;
 }
 
-.companyInfoWrapper .infoBtsWrapper li button {
+.companyInfoWrapper .infoBtnsWrapper li button {
     background: none;
     border: 1px solid #28B171;
     color:#28B171;
@@ -46,7 +46,7 @@
     min-width: 196px;
 }
 
-.companyInfoWrapper .infoBtsWrapper li button:hover {
+.companyInfoWrapper .infoBtnsWrapper li button:hover {
     background:#28B171;
     color: white;
 }
@@ -58,7 +58,7 @@
     margin-top: 20px;
 }
 
-.companyInfoWrapper .infoBtsWrapper li {
+.companyInfoWrapper .infoBtnsWrapper li {
     display: inline-block;
 }
 
@@ -115,7 +115,7 @@
     align-items: baseline;
     }
 
-    .companyInfoWrapper .infoBtsWrapper {
+    .companyInfoWrapper .infoBtnsWrapper {
         display: none;
     }
 

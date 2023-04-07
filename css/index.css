@@ -539,21 +539,23 @@
     
     .nextBtn::before {
         transform: rotate(45deg);
+        top: -10px;
     }
     
     .nextBtn::after {
         position: relative;
-        top: 18px;
+        top: 8px;
         transform: rotate(315deg);
     }
     
     .prevBtn::before {
         transform: rotate(-45deg);
+        top: -10px;
     }
     
     .prevBtn::after {
         position:relative;
-        top: 8px;
+        top: -2px;
         left: 6px;
         transform-origin: top left;
         transform: rotate(45deg);

@@ -98,8 +98,8 @@
 
 .submitDiv button:first-child:hover{
     color: white;
-    background-color: #2969B3;
-    border: 1px solid #2969B3;
+    background-color: tomato;
+    border: 1px solid tomato;
 }
 
 .rightSide input[type="text"] {

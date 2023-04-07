@@ -285,7 +285,6 @@
 .donateForm select {
     text-align: center;
     font-size: 1.1rem;
-    padding: 0.5rem 1.5rem;
     margin-top: 10px;
     overflow-wrap: break-word;
     width: 100%;
@@ -372,7 +371,7 @@
 }
 
 .goNextBtn:hover {
-    background-color: #2969B3;
+    background-color: tomato;
 }
 
 @media screen and (max-width: 768px) {
@@ -386,8 +385,6 @@
 
     .donateForm select {
         width: 100%;
-        padding: 0.1rem 3rem;
-
     }
 
     .donateForm .firstInfoWrapper p {
@@ -431,6 +428,5 @@
 
     .donateForm select {
         max-width: 375px;
-        padding: 0.1rem 3rem;
     }
 }

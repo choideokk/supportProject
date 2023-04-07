@@ -1,9 +1,10 @@
 let timer;
 let isCounting = false;
+
 const firstNum = document.querySelector(".rightWing .firstNum");
 const secondNum = document.querySelector(".rightWing .secondNum");
 const thirdNum = document.querySelector(".rightWing .thirdNum");
-const companyInfoWrapper = document.querySelector(".companyInfoWrapper .rightWing");
+const companyInfoWrapper = document.querySelector(".companyInfoBottom .rightWing");
 
 const eventPercent = document.querySelector(".percent span");
 const eventCarouselInner = document.querySelector(".eventBLWrapper ul");
@@ -26,71 +27,58 @@ goRightBtn.addEventListener("click", () => {
     eventPercent.style.transform = `translateX(50%)`;
 })
 
-window.onscroll = () => {
-    const infoTop = companyInfoWrapper.getBoundingClientRect().top;
-    const infoBottom = companyInfoWrapper.getBoundingClientRect().bottom - 80;
-    const windowHeight = window.innerHeight;
-    if (infoTop < windowHeight && infoBottom > 0) {
-        if (!timer) {
-            timer = setTimeout(() => {
-                timer = null;
-                countUp();
-            }, 200)
+// 위에서 아래로 스크롤할 때
+let waypoint1 = new Waypoint({
+    element: firstNum,
+    handler: function (direction) {
+        if (direction === "down") {
+            countUp2(firstNum, 60);
+            countUp2(secondNum, 40);
+            countUp2(thirdNum, 15);
         }
-    } else {
-        if (!timer) {
-            timer = setTimeout(() => {
-                timer = null;
-                countReset();
-            }, 200)
-        }
-    }
+    },
+    offset: 'bottom-in-view'
+})
 
+// 아래에서 위로 스크롤할 때
+let waypoint2 = new Waypoint({
+    element: thirdNum,
+    handler: function (direction) {
+        if (direction === "up") {
+            countUp2(firstNum, 60);
+            countUp2(secondNum, 40);
+            countUp2(thirdNum, 15);
+        }
+    },
+    offset: '80px'
+})
+
+window.onscroll = () => {
     scrollAniEvent(companyInfoH1);
     scrollAniEvent(firstH1);
     scrollAniEvent(secondH1);
     scrollAniEvent(lastH1);
 }
 
-function countUp() {
-    let firstCount = 0;
-    let secondCount = 0;
-    let thirdCount = 0;
+function countUp2(element, interval) {
+    const max = element.dataset.num;
+    let now = 0;
 
-    if (isCounting === true) return;
-    if (firstNum.textContent === "33") return;
-    if (secondNum.textContent === "52") return;
-    if (thirdNum.textContent === "148") return;
+    // 실행중이면 리턴
+    if (element.textContent != 0 && element.textContent != max) return;
 
-    isCounting = true;
-    const firstInterval = setInterval(() => {
-        firstNum.textContent = `${firstCount++} `;
-        if (firstCount === 34) {
-            clearInterval(firstInterval);
-        };
-    }, 50);
+    // 0으로 초기화
+    element.textContent = 0;
 
-
-    const secondInterval = setInterval(() => {
-        secondNum.textContent = `${secondCount++} `;
-        if (secondCount === 53) {
-            clearInterval(secondInterval);
-        };
-    }, 30);
-
-    const thirdInterval = setInterval(() => {
-        thirdNum.textContent = `${thirdCount++} `;
-        if (thirdCount === 149) {
-            clearInterval(thirdInterval);
-        };
-    }, 11);
-}
-
-function countReset() {
-    firstNum.textContent = 0;
-    secondNum.textContent = 0;
-    thirdNum.textContent = 0;
-    isCounting = false;
+    const handler = setInterval(() => {
+        // 목표에 도달하면 정지
+        if (now == max) {
+            clearInterval(handler);
+            return;
+        }
+        now++;
+        element.textContent = now;
+    }, interval);
 }
 
 function scrollAniEvent(element) {
