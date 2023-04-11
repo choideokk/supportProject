@@ -1,6 +1,7 @@
 const subscribeForm = document.querySelector(".subscribeForm");
 const emailInput = document.querySelector(".subscribeForm input[type='email']");
 
+// 뉴스레터 구독 폼 제출
 subscribeForm.addEventListener("submit", (e) => {
     e.preventDefault();
     if (emailInput.value.trim() === "") return;

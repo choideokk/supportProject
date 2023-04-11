@@ -16,11 +16,14 @@ const firstH1 = document.querySelector(".firstH1");
 const secondH1 = document.querySelector(".secondH1");
 const lastH1 = document.querySelector(".lastH1");
 
+// 이벤트 슬라이드 왼쪽 이동
 goLeftBtn.addEventListener("click", () => {
     eventCarouselInner.classList.add("goLeft");
     eventCarouselInner.classList.remove("goRight");
     eventPercent.style.transform = "translateX(0)";
 })
+
+// 이벤트 슬라이드 오른쪽 이동
 goRightBtn.addEventListener("click", () => {
     eventCarouselInner.classList.add("goRight");
     eventCarouselInner.classList.remove("goLeft");
@@ -53,6 +56,7 @@ let waypoint2 = new Waypoint({
     offset: '80px'
 })
 
+// 스크롤 시에 화면에 보이면 이벤트 추가
 window.onscroll = () => {
     scrollAniEvent(companyInfoH1);
     scrollAniEvent(firstH1);
@@ -81,6 +85,7 @@ function countUp2(element, interval) {
     }, interval);
 }
 
+// 화면에 보이면 fadeInUp 애니메이션 추가
 function scrollAniEvent(element) {
     const elementTop = element.getBoundingClientRect().top;
     if (elementTop < window.innerHeight && elementTop > 0) {
